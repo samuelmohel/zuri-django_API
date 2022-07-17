@@ -11,5 +11,9 @@ urlpatterns = [
     path("read/<slug:slug>", views.PostDetailView.as_view(), name="post_detail"),
     path("delete/<slug:slug>", views.PostDeleteView.as_view(), name="post_delete"),
     path("update/<slug:slug>", views.PostUpdateView.as_view(), name="post_update"),
+    path("create/", views.PostCreateApi.as_view(), name="api_create"),
+    path("update/<int:pk>", views.PostUpdateApi.as_view(), name="api_update"),
+    path("delete/<int:pk>", views.PostDeleteApi.as_view(), name="api_delete"),
+    path("", views.PostListApi.as_view(), name="api_list"),
     
 ]
